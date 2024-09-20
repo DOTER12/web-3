@@ -1,7 +1,21 @@
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "strconv"
+)
 
 func main() {
-	fmt.Println("Hello, world!!!")
+    var a string
+    fmt.Scan(&a)
+
+    max := 0 
+    for _, digit := range a {
+        num, _ := strconv.Atoi(string(digit)) // Преобразуем символ в число
+
+        if num > max {
+            max = num
+        }
+    }
+    fmt.Print(max)
 }
